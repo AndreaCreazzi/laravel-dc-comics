@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hero;
 use Illuminate\Http\Request;
 
 class HeroController extends Controller
@@ -11,7 +12,8 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return view('heroes.index');
+        $heroes = Hero::all();
+        return view('heroes.index', compact('heroes'));
     }
 
     /**
@@ -19,7 +21,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        //
+        return view('heroes.create');
     }
 
     /**
@@ -35,7 +37,8 @@ class HeroController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $hero = Hero::findOrFail($id);
+        return view('heroes.show', compact('hero'));
     }
 
     /**
