@@ -11,7 +11,7 @@
 
 <body>
     @include('includes.header')
-    <main class="container">
+    <main>
         @yield('content')
     </main>
     @include('includes.footer')

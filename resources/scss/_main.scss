@@ -1,0 +1,80 @@
+.comics{
+
+    padding: 3rem;
+    background-color: #1c1c1c;
+    
+    .card-scss {
+        flex-basis: calc(100% / 6);
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        padding: 0 30px;
+    
+        .img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+    
+        .img-card {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+    
+        .p-subclass {
+            color: white;
+            font-size: 0.8rem;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+    .load {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .btn-scss {
+        color: white;
+        background-color: #0282f9;
+        padding: 10px 70px;
+        cursor: pointer;
+    }
+
+    .card-container {
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.shop {
+
+    background-color: #0282f9;
+
+    img {
+        max-width: 60px;
+        height: 60px;
+        margin-right: 20px;
+    }
+    
+    figure {
+        height: 171px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1683px;
+    }
+    
+    p {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+    }
+}

@@ -3,21 +3,36 @@
 @section('title', 'Comics')
 
 @section('content')
-    <div class="p-3">
-        <a class="btn btn-success" href="{{ route('heroes.create') }}">Inserisci Nuovo fumetto</a>
-    </div>
     <div class="d-flex flex-wrap">
-        @forelse ($heroes as $hero)
-            <div class="card mx-3 my-3" style="width: 18rem;">
-                <a class="text-decoration-none" href="{{ route('heroes.show', $hero) }}">
-                    <div class="card-body">
-                        <img class="img-fluid" src="{{ $hero->thumb }}" alt="{{ $hero->title }}">
-                        <p class="card-text text-dark">{{ $hero->title }}</p>
+        <section class="comics">
+            <div class="card-container">
+                @foreach ($heroes as $hero)
+                    <div class="card-scss">
+                        <a class="text-decoration-none" href="{{ route('heroes.show', $hero) }}">
+                            <div class="img-container">
+                                <img class="img-card" src="{{ $hero->thumb }}" alt="">
+                            </div>
+                            <p class="p-subclass">{{ $hero->title }}</p>
+                        </a>
                     </div>
-                </a>
+                @endforeach
             </div>
-        @empty
-            <h1>Non ci son fumetti</h1>
-        @endforelse
+            <div class="load">
+                <a href="{{ route('heroes.create') }}" class="btn-scss text-decoration-none">Inserisci Nuovo Fumetto</a>
+            </div>
+        </section>
+        <section class="shop">
+            <figure>
+                <p><img src="{{ Vite::asset('resources/img/buy-comics-digital-comics.png') }}" alt="">DIGITAL COMICS
+                </p>
+                <p><img src="{{ Vite::asset('resources/img/buy-comics-merchandise.png') }}" alt="">DC MERCHANDISE
+                </p>
+                <p><img src="{{ Vite::asset('resources/img/buy-comics-shop-locator.png') }}" alt="">SUBSCRITION</p>
+                <p><img src="{{ Vite::asset('resources/img/buy-comics-subscriptions.png') }}" alt="">COMIC SHOP
+                    LOCATOR
+                </p>
+                <p><img src="{{ Vite::asset('resources/img/buy-dc-power-visa.svg') }}" alt="">DC POWER VISA</p>
+            </figure>
+        </section>
     </div>
 @endsection

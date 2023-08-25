@@ -1,19 +1,50 @@
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+<header>
+    <nav>
+        <div class="col">
+            <a href="{{ route('home') }}">
+                <img class="logo" src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="logo DC">
+            </a>
+        </div>
+        <div class="col">
+            <ul>
+                <li>
+                    <a @if (Route::is('character')) class="active" @endif
+                        href="{{ route('character') }}">CHARACTERS</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('heroes.index') }}">Comics</a>
+                <li>
+                    <a @if (Route::is('home')) class="active" @endif
+                        href="{{ route('heroes.index') }}">COMICS</a>
+                </li>
+                <li>
+                    <a @if (Route::is('movies')) class="active" @endif href="{{ route('movies') }}">MOVIES</a>
+                </li>
+                <li>
+                    <a @if (Route::is('tv')) class="active" @endif href="{{ route('tv') }}">TV</a>
+                </li>
+                <li>
+                    <a @if (Route::is('games')) class="active" @endif href="{{ route('games') }}">GAMES</a>
+                </li>
+                <li>
+                    <a @if (Route::is('collectibles')) class="active" @endif
+                        href="{{ route('collectibles') }}">COLLECTIBLES</a>
+                </li>
+                <li>
+                    <a @if (Route::is('videos')) class="active" @endif href="{{ route('videos') }}">VIDEOS</a>
+                </li>
+                <li>
+                    <a @if (Route::is('fans')) class="active" @endif href="{{ route('fans') }}">FANS</a>
+                </li>
+                <li>
+                    <a @if (Route::is('news')) class="active" @endif href="{{ route('news') }}">NEWS</a>
+                </li>
+                <li>
+                    <a @if (Route::is('shop')) class="active" @endif href="{{ route('shop') }}">SHOP</a>
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
+        <div class="col">
+            <input type="text" placeholder="Search">
+        </div>
+    </nav>
+    <div class="nav-bottom"></div>
+</header>
