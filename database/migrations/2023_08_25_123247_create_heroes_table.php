@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->text('thumb');
+            $table->string('price');
+            $table->date('sale_date');
+            $table->string('type');
+            $table->string('artists');
+            $table->string('writers');
             $table->timestamps();
         });
     }
