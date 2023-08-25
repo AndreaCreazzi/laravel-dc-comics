@@ -12,7 +12,7 @@
                         href="{{ route('character') }}">CHARACTERS</a>
                 </li>
                 <li>
-                    <a @if (Route::is('home')) class="active" @endif
+                    <a @if (Route::is('heroes.index')) class="active" @endif
                         href="{{ route('heroes.index') }}">COMICS</a>
                 </li>
                 <li>
