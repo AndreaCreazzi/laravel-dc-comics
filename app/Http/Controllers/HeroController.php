@@ -29,7 +29,11 @@ class HeroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $hero = new Hero();
+        $hero->fill($data);
+        $hero->save();
+        return to_route('heroes.index');
     }
 
     /**
