@@ -44,7 +44,7 @@
                 <div class="d-flex">
                     <p class="title-bottom">Series: </p>
                     <div class="content">
-                        <p class="text">{{ $hero->series }}</p>
+                        <p class="text">{{ $hero->title }}</p>
                     </div>
                 </div>
                 <hr>
