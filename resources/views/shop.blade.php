@@ -1,3 +1,3 @@
-@extends('layouts.layout')
+@extends('layouts.main')
 
 @section('title', 'Laravel Comics')

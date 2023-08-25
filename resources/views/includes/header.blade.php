@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div class="col">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('heroes.index') }}">
                 <img class="logo" src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="logo DC">
             </a>
         </div>
