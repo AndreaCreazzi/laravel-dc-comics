@@ -3,8 +3,6 @@
 @section('title', ' Add Comic')
 
 @section('content')
-
-
     <div class="card m-4">
         @if ($errors->any())
             <div class="alert alert-danger">
