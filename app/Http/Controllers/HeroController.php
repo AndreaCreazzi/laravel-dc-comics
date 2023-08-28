@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hero;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class HeroController extends Controller
 {
@@ -31,6 +32,16 @@ class HeroController extends Controller
     {
         $data = $request->all();
         $hero = new Hero();
+        $request->validate([
+            'title' => 'required|string|unique:heroes',
+            'description' => 'required|string',
+            'thumb' => 'required|url:http,https',
+            'price' => 'required|string',
+            'sale_date' => 'required|date',
+            'type' => 'required|string',
+            'artists' => 'required|string',
+            'writers' => 'required|string'
+        ]);
         $hero->fill($data);
         $hero->save();
         return to_route('heroes.index');
@@ -56,10 +67,24 @@ class HeroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Hero $hero)
+    public function update(Request $request, string $id)
     {
+        $hero = Hero::findOrFail($id);
+
+        $request->validate([
+            'title' => ['required', 'string', Rule::unique('heroes')->ignore($id)],
+            'description' => 'required|string',
+            'thumb' => 'required|url:http,https',
+            'price' => 'required|string',
+            'sale_date' => 'required|date',
+            'type' => 'required|string',
+            'artists' => 'required|string',
+            'writers' => 'required|string'
+        ]);
         $data = $request->all();
+
         $hero->update($data);
+
         return to_route('heroes.show', $hero->id);
     }
 

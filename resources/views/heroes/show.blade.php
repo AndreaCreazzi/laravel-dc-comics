@@ -11,7 +11,10 @@
         <div class="wrapper-top container">
             <div>
                 <h1>{{ $hero['title'] }}</h1>
-                <a class="btn btn-warning" href="{{ route('heroes.edit', $hero) }}">Modifica</a>
+                <div class="d-flex">
+                    <a class="btn btn-primary me-2" href="{{ route('heroes.index') }}">Torna indietro</a>
+                    <a class="btn btn-warning" href="{{ route('heroes.edit', $hero) }}">Modifica</a>
+                </div>
                 <p class="price"><strong>U.S Price:</strong> {{ $hero->price }}</p>
                 <p class="description">{{ $hero->description }}</p>
             </div>
