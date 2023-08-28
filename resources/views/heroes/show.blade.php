@@ -11,6 +11,7 @@
         <div class="wrapper-top container">
             <div>
                 <h1>{{ $hero['title'] }}</h1>
+                <a class="btn btn-warning" href="{{ route('heroes.edit', $hero) }}">Modifica</a>
                 <p class="price"><strong>U.S Price:</strong> {{ $hero->price }}</p>
                 <p class="description">{{ $hero->description }}</p>
             </div>

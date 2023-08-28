@@ -48,17 +48,19 @@ class HeroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Hero $hero)
     {
-        //
+        return view('heroes.edit', compact('hero'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Hero $hero)
     {
-        //
+        $data = $request->all();
+        $hero->update($data);
+        return to_route('heroes.show', $hero->id);
     }
 
     /**
